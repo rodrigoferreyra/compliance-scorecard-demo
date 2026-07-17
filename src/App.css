@@ -1,0 +1,227 @@
+/* App.css */
+
+:root {
+  --bg-color: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --border-color: #e2e8f0;
+  --card-bg: #ffffff;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --highlight-border: #3b82f6;
+  --highlight-bg: rgba(59, 130, 246, 0.15);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+  max-width: 650px;
+}
+
+.header h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
+  letter-spacing: -0.025em;
+}
+
+.header p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Screenshot Relative Positioning Container */
+.screenshot-container {
+  position: relative;
+  max-width: 1300px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+
+.screenshot-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Semi-transparent highlight rectangle */
+.highlight-rectangle {
+  position: absolute;
+  /* Configured with CSS percentages to scale with the image */
+  border: 3px solid var(--highlight-border);
+  border-radius: 8px;
+  background-color: var(--highlight-bg);
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.4);
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 10;
+  /* Smooth transition for positioning and sizing when changing steps */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Floating callout box */
+.callout-box {
+  position: absolute;
+  /* Configured with CSS percentages to scale position with the image */
+  width: 28%;
+  min-width: 240px;
+  max-width: 320px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow-lg), 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  box-sizing: border-box;
+  text-align: left;
+  /* Smooth transition for positioning when changing steps */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.step-badge {
+  display: inline-block;
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+
+.callout-box h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.callout-box p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Navigation & Controls */
+.navigation-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.dot-indicator:hover {
+  background-color: #cbd5e1;
+  transform: scale(1.15);
+}
+
+.dot-indicator.active {
+  background-color: var(--primary-color);
+  transform: scale(1.3);
+}
+
+/* Action Area */
+.action-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.nav-button {
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.next-button {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  box-shadow: var(--shadow-md);
+}
+
+.next-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.next-button:active {
+  transform: scale(0.97);
+}
+
+.prev-button {
+  background-color: #ffffff;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.prev-button:hover {
+  background-color: #f1f5f9;
+  color: var(--text-primary);
+  border-color: #cbd5e1;
+}
+
+.prev-button:active {
+  transform: scale(0.97);
+}

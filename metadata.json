@@ -1,0 +1,6 @@
+{
+  "name": "Interactive Product Demo Prototype",
+  "description": "A simple Storylane-style prototype demonstrating responsive overlays and callouts on top of a screenshot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
