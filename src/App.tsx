@@ -39,18 +39,6 @@ const STEPS: Step[] = [
     description: "Add a new client by opening the Clients page.",
     image: `${import.meta.env.BASE_URL}images/client.gif`,
     callout: { anchor: "top-center" }
-  },
-  {
-    title: "Analytics Trend Chart",
-    description: "Visualize live performance vectors, conversion milestones, and rolling active user rates over custom time-series windows.",
-    image: `${import.meta.env.BASE_URL}images/Analytics Trend Chart.png`,
-    callout: { anchor: "top-left" }
-  },
-  {
-    title: "Actionable Insights & Export",
-    description: "Generate customized reports, extract metrics datasets into spreadsheet CSV formats, or trigger system actions.",
-    image: `${import.meta.env.BASE_URL}images/Actionable Insights & Export.png`,
-    callout: { anchor: "center" }
   }
 ];
 
