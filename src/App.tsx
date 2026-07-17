@@ -25,31 +25,31 @@ const STEPS: Step[] = [
   {
     title: "Dashboard",
     description: "The Dashboard provides an overview of all your most critical activity across all your different company clients. Highlighted information includes policies, assessments, pending tasks, and risk matrix.",
-    image: "/images/dashboard.png",
+    image: `${import.meta.env.BASE_URL}images/dashboard.png`,
     callout: { anchor: "center" }
   },
   {
     title: "Choose your client",
     description: "The dropdown menu allows you to switch between different company dashboards.",
-    image: "/images/select client.png",
+    image: `${import.meta.env.BASE_URL}images/select client.png`,
     callout: { anchor: "center" }
   },
   {
     title: "Add Clients",
     description: "Add a new client by opening the Clients page.",
-    image: "/images/client.gif",
+    image: `${import.meta.env.BASE_URL}images/client.gif`,
     callout: { anchor: "top-center" }
   },
   {
     title: "Analytics Trend Chart",
     description: "Visualize live performance vectors, conversion milestones, and rolling active user rates over custom time-series windows.",
-    image: "/images/Analytics Trend Chart.png",
+    image: `${import.meta.env.BASE_URL}images/Analytics Trend Chart.png`,
     callout: { anchor: "top-left" }
   },
   {
     title: "Actionable Insights & Export",
     description: "Generate customized reports, extract metrics datasets into spreadsheet CSV formats, or trigger system actions.",
-    image: "/images/Actionable Insights & Export.png",
+    image: `${import.meta.env.BASE_URL}images/Actionable Insights & Export.png`,
     callout: { anchor: "center" }
   }
 ];
